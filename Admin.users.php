@@ -3,7 +3,6 @@
 session_start();
 
 // database include
-
 /** @var mysqli $conn */
 require_once "config/db.php";
 
@@ -11,5 +10,44 @@ $id = $_SESSION ['loggedInAdmin']['id'];
 if (!isset($_SESSION['loggedInAdmin']) || $_SESSION['loggedInAdmin'] === '') {
     header('Location: admin.login.php');
     exit;
-} else
-    echo "hallo";
+}
+
+//Get the result set from the database with a SQL query
+$query = "SELECT * FROM users";
+$result = mysqli_query($conn, $query);
+
+//Loop through the result to create a custom array
+$users = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $users[] = $row;
+}
+
+//Close connection
+mysqli_close($conn);
+
+?>
+
+<table>
+    <thead>
+    <tr>
+        <th></th>
+        <th>#</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Created At</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <?php foreach ($users as $user) { ?>
+        <tr>
+            <td><?= $user['id'] ?></td>
+            <td><?= $user['userName'] ?></td>
+            <td><?= $user['email'] ?></td>
+            <td><?= $user['Created_at'] ?></td>
+            <td><a href="detail.php?id=<?= $user['id'] ?>">Details</a></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>
+
