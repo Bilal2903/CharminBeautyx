@@ -29,9 +29,6 @@ if (mysqli_num_rows($query_run) == 1) {
     $user = mysqli_fetch_assoc($query_run);
 
 }
-//include nav
-include_once 'nav.php';
-
 ?>
 
 <body>
@@ -43,7 +40,6 @@ include_once 'nav.php';
 
 
 <button onclick="window.location.href= 'Profile.edit.php';">Go Back</button>
-
 
 </body>
 

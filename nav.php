@@ -53,10 +53,6 @@ session_start();
                     <a class="social-icon" href="https://www.instagram.com/charmingbeautyx/" target="_blank">
                         <ion-icon name="logo-instagram"></ion-icon>
                     </a>
-
-                    <a class="" href="" target="">
-
-                    </a>
                 </ul>
 
                 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

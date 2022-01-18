@@ -62,11 +62,10 @@ if (isset($_POST['adminSubmit'])) {
 include_once 'Admin.nav.php';
 ?>
 
-
 <div class="forum-heading">
-<?php if ($adminLogin) { ?>
-<h2>Je bent ingelogd!</h2>
-<?php } else { ?>
+    <?php if ($adminLogin) { ?>
+        <h2>Je bent ingelogd!</h2>
+    <?php } else { ?>
 </div>
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

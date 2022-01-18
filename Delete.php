@@ -13,7 +13,6 @@ if (!isset($_SESSION['loggedInUser']) || $_SESSION['loggedInUser'] === '') {
 
 /** @var mysqli $conn */
 //session logged in user
-$id = $_SESSION ['loggedInUser']['id'];
 
 // Get the record from the database result
 $userId = mysqli_escape_string($conn, $_POST['id']);
@@ -65,7 +64,7 @@ include_once 'nav.php';
     <h2>We gaan je missen! 💅🏼 </h2>
 </div>
 
-<form action="" method="post">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
     <div class="forum-heading">
         <h2>Delete User</h2>
     </div>
@@ -75,4 +74,3 @@ include_once 'nav.php';
 
     <button type="submit" name="submit" value="Verwijderen">Verwijderen</button>
 </form>
-</body>

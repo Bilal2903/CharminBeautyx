@@ -100,7 +100,6 @@ include_once 'nav.php';
                     <span class="errors"><?= $errors['email'] ?? '' ?></span>
 
                     <div class="input-parent">
-
                         <select id="diensten" name="diensten">
                             <option value="-">Kies behandeling*</option>
                             <option value="BIAB TREATMENT">BIAB TREATMENT</option>

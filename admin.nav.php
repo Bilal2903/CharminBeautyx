@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-$id = $_SESSION ['loggedInAdmin']['id'];
-if (!isset($_SESSION['loggedInAdmin']) || $_SESSION['loggedInAdmin'] === '') {
-    header('Location: admin.login.php');
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +30,7 @@ if (!isset($_SESSION['loggedInAdmin']) || $_SESSION['loggedInAdmin'] === '') {
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn">Settings</a>
                         <div class="dropdown-content">
+                            <a href="Admin.profile.php">profiel</a>
                             <a href="Admin.edit.php">Profiel bewerken</a>
                             <a href="Admin.logout.php">Log Uit</a>
                             <a href="Admin.delete.php">Delete user</a>

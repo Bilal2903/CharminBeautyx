@@ -33,20 +33,6 @@ if (isset($_POST['update'])) {
     $query_run = mysqli_query($conn, $query);
 
 }
-
-if(isset($_POST['test'])) {
-
-    // the message
-    $msg = "First line of text\nSecond line of text";
-
-// use wordwrap() if lines are longer than 70 characters
-    $msg = wordwrap($msg,70);
-
-// send email
-    mail("bilal3036@live.nl","My subject",$msg);
-
-
-}
 ?>
 
     <div class="forum-heading">
@@ -89,11 +75,6 @@ if(isset($_POST['test'])) {
         </div>
 
         <button type="submit" name="update" value="Opslaan">Opslaan</button>
-
-
-        <button type="submit" name="test" value="test">Test</button>
-
-
 
 
     </form>

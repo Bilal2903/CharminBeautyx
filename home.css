@@ -294,6 +294,13 @@ label {
     color: darkred;                                         //kleur-van-lettertype-email-en-wachtwoord-//
 }
 
+select {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: darkred;                                         //kleur-van-lettertype-email-en-wachtwoord-//
+}
+
 .input-parent input {
     box-sizing: border-box;
     border-radius: 50px;
@@ -308,7 +315,7 @@ label {
 }
 
 /* diensten select*/
-.input-parent option {
+.input-parent option, select {
     box-sizing: border-box;
     border-radius: 50px;
     padding: 10px;
