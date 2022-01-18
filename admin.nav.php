@@ -20,7 +20,6 @@ session_start();
         <div class="navigation-bar">
             <div id="navigation-container">
                 <ul>
-                test
                     <?php
                     if (isset($_SESSION["loggedInUser"])) { ?>
 
