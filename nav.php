@@ -33,7 +33,8 @@ session_start();
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropbtn">Settings</a>
                             <div class="dropdown-content">
-                                <a href="Profile.page.php">Profiel bewerken</a>
+                                <a href="profile.php">profiel</a>
+                                <a href="Profile.edit.php">Profiel bewerken</a>
                                 <a href="logout.php">Log Uit</a>
                                 <a href="Delete.php">Delete user</a>
                             </div>

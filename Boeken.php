@@ -37,7 +37,6 @@ if (isset($_POST['submit'])) {
     //If empty Errors
     if (empty($errors)) {
 
-
         //gegevens in de database zetten
         $query = "INSERT INTO reservations (firstName, number ,email, diensten, meetingtime, message) values('$firstName', '$number', '$email', '$diensten', '$meetingtime', '$message')";
 
@@ -125,7 +124,7 @@ include_once 'nav.php';
                                 max="2027-01-01T00:00"
                         />
                     </div>
-                    
+
                     <div class="input-parent">
                         <label for="message">Opmerking</label>
                         <input

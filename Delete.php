@@ -5,6 +5,12 @@ require_once "config/db.php";
 
 session_start();
 
+$id = $_SESSION ['loggedInUser']['id'];
+if (!isset($_SESSION['loggedInUser']) || $_SESSION['loggedInUser'] === '') {
+    header('Location: home.php');
+    exit;
+}
+
 /** @var mysqli $conn */
 //session logged in user
 $id = $_SESSION ['loggedInUser']['id'];

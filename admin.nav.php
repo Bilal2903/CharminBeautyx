@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+$id = $_SESSION ['loggedInAdmin']['id'];
+if (!isset($_SESSION['loggedInAdmin']) || $_SESSION['loggedInAdmin'] === '') {
+    header('Location: admin.login.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,23 +23,23 @@ session_start();
 <body>
 <header>
     <nav>
+        <?php
+        if (isset($_SESSION["loggedInAdmin"])) { ?>
         <div class="navigation-bar">
+            <a href="Admin.users.php"><img class="logo" src="image/Charming%20Beauty.PNG" alt="CharmingBeautyx"></a>
             <div id="navigation-container">
                 <ul>
-                    <?php
-                    if (isset($_SESSION["loggedInUser"])) { ?>
-
-                        <li><a href="Users.php">Users</a></li>
-                        <li><a href="Reservation.php">Reservation</a></li>
-                        <li><a href="Admin.add.php">Add Admin</a></li>
-                        <li class="dropdown">
-                            <a href="javascript:void(0)" class="dropbtn">Settings</a>
-                            <div class="dropdown-content">
-                                <a href="Admin.edit.php">Profiel bewerken</a>
-                                <a href="Admin.logout.php">Log Uit</a>
-                                <a href="Admin.delete.php">Delete user</a>
-                            </div>
-                        </li>
+                    <li><a href="Admin.users.php">Users</a></li>
+                    <li><a href="Admin.reservation.php">Reservations</a></li>
+                    <li><a href="Admin.add.php">Add Admin</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Settings</a>
+                        <div class="dropdown-content">
+                            <a href="Admin.edit.php">Profiel bewerken</a>
+                            <a href="Admin.logout.php">Log Uit</a>
+                            <a href="Admin.delete.php">Delete user</a>
+                        </div>
+                    </li>
                     <?php } ?>
 
                 </ul>

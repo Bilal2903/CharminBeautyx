@@ -9,6 +9,12 @@ if (isset($_SESSION['loggedInUser'])) {
     $login = false;
 }
 
+$id = $_SESSION ['loggedInUser']['id'];
+if (!isset($_SESSION['loggedInUser']) || $_SESSION['loggedInUser'] === '') {
+    header('Location: home.php');
+    exit;
+}
+
 // include data
 /** @var mysqli $conn */
 require_once 'config/db.php';
@@ -43,5 +49,5 @@ if (mysqli_num_rows($result) == $_SESSION) {
     </ul>
 </section>
 <div>
-    <a href="Profile.page.php">Go back</a>
+    <a href="Profile.edit.php">Go back</a>
 </div>

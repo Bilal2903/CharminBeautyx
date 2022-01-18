@@ -1,5 +1,13 @@
 <?php
 
+session_start();
+
+$id = $_SESSION ['loggedInAdmin']['id'];
+if (!isset($_SESSION['loggedInAdmin']) || $_SESSION['loggedInAdmin'] === '') {
+    header('Location: admin.login.php');
+    exit;
+}
+
 //if button is pressed
 if (isset($_POST['submit'])) {
     //require data
@@ -40,7 +48,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 <?php
-include_once 'admin.nav.php';
+include_once 'Admin.nav.php';
 ?>
 
 <div class="forum-heading">

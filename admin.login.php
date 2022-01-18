@@ -1,4 +1,5 @@
 <?php
+//session start
 session_start();
 
 // if Session logged in
@@ -29,7 +30,7 @@ if (isset($_POST['adminSubmit'])) {
 // if none errors
     if (empty($errors)) {
         // gegevens nemen van de database over de admin
-        $query = "SELECT * FROM admin WHERE adminEmail='$adminEmail'";
+        $query = "SELECT * FROM admin  WHERE adminEmail='$adminEmail'";
         $result = mysqli_query($conn, $query);
         if (mysqli_num_rows($result) == 1) {
             $admin = mysqli_fetch_assoc($result);
@@ -58,7 +59,7 @@ if (isset($_POST['adminSubmit'])) {
 ?>
 
 <?php
-include_once 'admin.nav.php';
+include_once 'Admin.nav.php';
 ?>
 
 
