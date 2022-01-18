@@ -12,4 +12,4 @@ if (!isset($_SESSION['loggedInAdmin']) || $_SESSION['loggedInAdmin'] === '') {
     header('Location: admin.login.php');
     exit;
 } else
-    echo "Test";
+    echo "hallo";
