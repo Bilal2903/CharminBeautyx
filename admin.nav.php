@@ -36,6 +36,17 @@ session_start();
                             <a href="Admin.delete.php">Delete user</a>
                         </div>
                     </li>
+                    <a class="social-icon"
+                       href="https://www.snapchat.com/add/charmingbty?share_id=N0I0ODk5&locale=nl_NL" target="_blank">
+                        <ion-icon name="logo-snapchat"></ion-icon>
+                    </a>
+
+                    <a class="social-icon" href="https://www.instagram.com/charmingbeautyx/" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+
+                    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
                     <?php } ?>
 
                 </ul>

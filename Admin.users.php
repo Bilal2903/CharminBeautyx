@@ -27,10 +27,13 @@ mysqli_close($conn);
 
 ?>
 
+<?php
+include_once 'Admin.nav.php';
+?>
+
 <table>
     <thead>
     <tr>
-        <th></th>
         <th>#</th>
         <th>User Name</th>
         <th>Email</th>
@@ -44,8 +47,7 @@ mysqli_close($conn);
             <td><?= $user['id'] ?></td>
             <td><?= $user['userName'] ?></td>
             <td><?= $user['email'] ?></td>
-            <td><?= $user['Created_at'] ?></td>
-            <td><a href="detail.php?id=<?= $user['id'] ?>">Details</a></td>
+            <td><?= $user['created_at'] ?></td>
         </tr>
     <?php } ?>
     </tbody>

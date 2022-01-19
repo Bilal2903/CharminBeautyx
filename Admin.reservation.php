@@ -1,7 +1,10 @@
 <?php
 
-//session start
 session_start();
+
+// database include
+/** @var mysqli $conn */
+require_once "config/db.php";
 
 $id = $_SESSION ['loggedInAdmin']['id'];
 if (!isset($_SESSION['loggedInAdmin']) || $_SESSION['loggedInAdmin'] === '') {
@@ -9,55 +12,55 @@ if (!isset($_SESSION['loggedInAdmin']) || $_SESSION['loggedInAdmin'] === '') {
     exit;
 }
 
-/** @var mysqli $admin */
-//include data
-require_once "config/db.php";
+//Get the result set from the database with a SQL query
+$query = "SELECT * FROM reservations";
+$result = mysqli_query($conn, $query);
 
-if(!isset($_GET['admin']))
-
-
-$sql = "SELECT * FROM reservations";
-
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result)> 0){
-    $reservations = mysqli_fetch_assoc($result);
-    foreach ($reservations as $reservation) {
-        print $reservation['email'];
-    }
-    print_r($reservations);
+//Loop through the result to create a custom array
+$reservations = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $reservations[] = $row;
 }
+
+//Close connection
+mysqli_close($conn);
+
 ?>
-<h1></h1>
-<hr/>
-<a href="Admin.add.reservation.php">New reservation</a>
+
+<?php
+include_once 'Admin.nav.php';
+?>
+
+<button onclick="window.location.href= 'Prijslijst.php';"> Nieuwe Reservering</button>
+
 <table>
     <thead>
     <tr>
         <th>#</th>
-        <th>First Name</th>
+        <th>Name</th>
         <th>Number</th>
         <th>Email</th>
-        <th>Diensten</th>
-        <th>Meeting Time</th>
+        <th>Dienst</th>
+        <th>Appointment</th>
         <th>Message</th>
         <th></th>
     </tr>
     </thead>
-    <tfoot>
-    <tr>
-        <td colspan="6">&copy; CharmingBeautyx</td>
-    </tr>
-    </tfoot>
+
     <tbody>
-    <?php foreach ( as $index => $reservation) {?>
+    <?php foreach ($reservations as $reservation) { ?>
         <tr>
-            <td><?= $index + 1 ?></td>
-            <td><?= $reservation['artist'] ?></td>
-            <td><?= $reservation['album'] ?></td>
-            <td><?= $reservation['genre'] ?></td>
-            <td><?= $reservation['year'] ?></td>
-            <td><?= $reservation['tracks'] ?></td>
-            <td><a href="Admin.details.php?index=<?= $index ?>">Details</a></td>
+            <td><?= $reservation['id'] ?></td>
+            <td><?= $reservation['firstName'] ?></td>
+            <td><?= $reservation['number'] ?></td>
+            <td><?= $reservation['email'] ?></td>
+            <td><?= $reservation['diensten'] ?></td>
+            <td><?= $reservation['meetingtime'] ?></td>
+            <td><?= $reservation['message'] ?></td>
+            <td><button onclick="window.location.href= 'Prijslijst.php';"> Details</button></td>
+            <td><button onclick="window.location.href= 'Prijslijst.php';"> Edit</button></td>
+            <td><button onclick="window.location.href= 'Prijslijst.php';"> Delete</button></td>
+
         </tr>
     <?php } ?>
     </tbody>

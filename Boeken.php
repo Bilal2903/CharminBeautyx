@@ -8,11 +8,11 @@ if (isset($_POST['submit'])) {
     /** @var mysqli $conn */
 
     $firstName = mysqli_escape_string($conn, $_POST['firstName']);
-    $number = $_POST['number'];
-    $email = $_POST['email'];
-    $diensten = $_POST['diensten'];
-    $meetingtime = $_POST['meetingtime'];
-    $message = $_POST['message'];
+    $number = mysqli_escape_string($conn, $_POST['number']);
+    $email = mysqli_escape_string($conn, $_POST['email']);
+    $diensten = mysqli_escape_string($conn, $_POST['diensten']);
+    $meetingtime = mysqli_escape_string($conn, $_POST['meetingtime']);
+    $message = mysqli_escape_string($conn, $_POST['message']);
 
 
     //Errors
