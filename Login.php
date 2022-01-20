@@ -16,7 +16,7 @@ require_once "config/db.php";
 //if button is pressed
 if (isset($_POST['submit'])) {
     $email = mysqli_escape_string($conn, $_POST['email']);
-    $password = $_POST['password'];
+    $password = mysqli_escape_string($conn, $_POST['password']);
 
 //error message
     $errors = [];

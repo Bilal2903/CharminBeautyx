@@ -8,8 +8,8 @@ if (isset($_POST['submit'])) {
     /** @var mysqli $conn */
 
     $email = mysqli_escape_string($conn, $_POST['email']);
-    $password = $_POST['password'];
-    $userName = $_POST['userName'];
+    $password = mysqli_escape_string($conn, $_POST['password']);
+    $userName = mysqli_escape_string($conn, $_POST['userName']);
 
     //Errors
     $errors = [];

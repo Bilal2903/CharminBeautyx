@@ -19,8 +19,8 @@ if (isset($_POST['update'])) {
     $id = $_SESSION ['loggedInAdmin']['id'];
 
     $adminEmail = mysqli_escape_string($conn, $_POST['adminEmail']);
-    $adminPassword = $_POST['adminPassword'];
-    $adminName = $_POST['adminName'];
+    $adminPassword = mysqli_escape_string($conn, $_POST['adminPassword']);
+    $adminName = mysqli_escape_string($conn, $_POST['adminName']);
 
     //secure password with hash
     $adminPassword = password_hash($adminPassword, PASSWORD_DEFAULT);

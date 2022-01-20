@@ -23,7 +23,7 @@ require_once 'config/db.php';
 include_once 'nav.php';
 
 $email = mysqli_escape_string($conn, $_GET['email']);
-$userName = $_GET['userName'];
+$userName = mysqli_escape_string($conn, $_GET['userName']);
 
 
 $query = "SELECT * FROM users WHERE email='$email'";

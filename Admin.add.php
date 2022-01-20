@@ -15,8 +15,8 @@ if (isset($_POST['submit'])) {
     /** @var mysqli $conn */
 
     $adminEmail = mysqli_escape_string($conn, $_POST['adminEmail']);
-    $adminPassword = $_POST['adminPassword'];
-    $adminName = $_POST['adminName'];
+    $adminPassword = mysqli_escape_string($conn, $_POST['adminPassword']);
+    $adminName = mysqli_escape_string($conn, $_POST['adminName']);
 
     //Errors
     $errors = [];
