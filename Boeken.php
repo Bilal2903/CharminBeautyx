@@ -52,7 +52,7 @@ include_once 'nav.php';
 ?>
 
 <div class="forum-heading">
-    <?php if ($result) { ?>
+    <?php if (htmlspecialchars ($result)) { ?>
         <h2>Successful Gereserveerd</h2>
     <?php } else { ?>
 </div>
@@ -71,21 +71,21 @@ include_once 'nav.php';
                                 id="firstName"
                                 type="text"
                                 name="firstName"
-                                value="<?= $firstName ?? '' ?>"
+                                value="<?= htmlspecialchars ($firstName) ?? '' ?>"
                         />
                     </div>
-                    <span class="errors"><?= $errors['firstName'] ?? '' ?></span>
+                    <span class="errors"><?= htmlspecialchars ($errors['firstName']) ?? '' ?></span>
                     <div class="input-parent">
                         <label for="number">Telefoonnummer*</label>
                         <input
                                 id="number"
                                 type="text"
                                 name="number"
-                                value="<?= $number ?? '' ?>"
+                                value="<?= htmlspecialchars ($number) ?? '' ?>"
                         />
                     </div>
 
-                    <span class="errors"><?= $errors['number'] ?? '' ?></span>
+                    <span class="errors"><?= htmlspecialchars ($errors['number']) ?? '' ?></span>
 
                     <div class="input-parent">
                         <label for="email">Email adres*</label>
@@ -93,11 +93,11 @@ include_once 'nav.php';
                                 id="email"
                                 type="email"
                                 name="email"
-                                value="<?= $email ?? '' ?>"
+                                value="<?= htmlspecialchars ($email) ?? '' ?>"
                         />
                     </div>
 
-                    <span class="errors"><?= $errors['email'] ?? '' ?></span>
+                    <span class="errors"><?= htmlspecialchars ($errors['email']) ?? '' ?></span>
 
                     <div class="input-parent">
                         <select id="diensten" name="diensten">
@@ -109,7 +109,7 @@ include_once 'nav.php';
                         </select>
                     </div>
 
-                    <span class="errors"><?= $errors['diensten'] ?? '' ?></span>
+                    <span class="errors"><?= htmlspecialchars ($errors['diensten']) ?? '' ?></span>
 
                     <div class="input-parent">
                         <label for="meetingtime">Kies een datum en tijd*</label>

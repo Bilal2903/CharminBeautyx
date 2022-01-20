@@ -35,8 +35,8 @@ if (mysqli_num_rows($query_run) == 1) {
 <h2> Uw profiel gegevens zijn</h2>
 
 
-<p>User Name: <?= $user['userName'] ?></p>
-<p>User Email: <?= $user['email'] ?></p>
+<p>User Name: <?= htmlspecialchars ($user['userName']) ?></p>
+<p>User Email: <?= htmlspecialchars ($user['email']) ?></p>
 
 
 <button onclick="window.location.href= 'Profile.edit.php';">Go Back</button>

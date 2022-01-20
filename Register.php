@@ -44,8 +44,8 @@ include_once 'nav.php';
 ?>
 
 <div class="forum-heading">
-    <?php if ($result) { ?>
-        <h2>Welcome <?php echo $userName ?> u bent Succesvol Geregistreerd!</h2>
+    <?php if (htmlspecialchars ($result)) { ?>
+        <h2>Welcome <?php echo htmlspecialchars ($userName) ?> u bent Succesvol Geregistreerd!</h2>
     <?php } else { ?>
 </div>
 
@@ -59,30 +59,30 @@ include_once 'nav.php';
                     id="userName"
                     type="text"
                     name="userName"
-                    value="<?= $userName ?? '' ?>"
+                    value="<?= htmlspecialchars ($userName) ?? '' ?>"
             />
         </div>
-        <span class="errors"><?= $errors['userName'] ?? '' ?></span>
+        <span class="errors"><?= htmlspecialchars ($errors['userName']) ?? '' ?></span>
         <div class="input-parent">
             <label for="email">Email</label>
             <input
                     id="email"
                     type="email"
                     name="email"
-                    value="<?= $email ?? '' ?>"
+                    value="<?= htmlspecialchars ($email) ?? '' ?>"
             />
         </div>
-        <span class="errors"><?= $errors['email'] ?? '' ?></span>
+        <span class="errors"><?= htmlspecialchars ($errors['email']) ?? '' ?></span>
         <div class="input-parent">
             <label for="password">Password</label>
             <input
                     id="password"
                     type="password"
                     name="password"
-                    value="<?= $password ?? '' ?>"
+                    value="<?= htmlspecialchars ($password) ?? '' ?>"
             />
         </div>
-        <span class="errors"><?= $errors['password'] ?? '' ?></span>
+        <span class="errors"><?= htmlspecialchars ($errors['password']) ?? '' ?></span>
 
         <button type="submit" name="submit" value="registreren">Registreren</button>
 

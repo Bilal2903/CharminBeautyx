@@ -44,10 +44,10 @@ include_once 'Admin.nav.php';
     <tbody>
     <?php foreach ($users as $user) { ?>
         <tr>
-            <td><?= $user['id'] ?></td>
-            <td><?= $user['userName'] ?></td>
-            <td><?= $user['email'] ?></td>
-            <td><?= $user['created_at'] ?></td>
+            <td><?= htmlspecialchars ($user['id']) ?></td>
+            <td><?= htmlspecialchars ($user['userName']) ?></td>
+            <td><?= htmlspecialchars ($user['email']) ?></td>
+            <td><?= htmlspecialchars ($user['created_at']) ?></td>
         </tr>
     <?php } ?>
     </tbody>

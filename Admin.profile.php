@@ -35,8 +35,8 @@ include_once 'Admin.nav.php';
 <h2> Uw Admin gegevens zijn</h2>
 
 
-<p>Admin Name: <?= $admin['adminName'] ?></p>
-<p>Admin Email: <?= $admin['adminEmail'] ?></p>
+<p>Admin Name: <?= htmlspecialchars ($admin['adminName']) ?></p>
+<p>Admin Email: <?= htmlspecialchars ($admin['adminEmail']) ?></p>
 
 
 <button onclick="window.location.href= 'Admin.edit.php';">Go Back</button>

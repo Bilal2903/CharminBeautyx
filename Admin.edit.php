@@ -38,7 +38,7 @@ if (isset($_POST['update'])) {
 ?>
 
     <div class="forum-heading">
-<?php if ($query_run) { ?>
+<?php if (htmlspecialchars ($query_run)) { ?>
     <h2>Gegevens Succesvol bewerkt!</h2>
 <?php } else { ?>
     </div>

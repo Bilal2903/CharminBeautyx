@@ -50,13 +50,13 @@ include_once 'Admin.nav.php';
     <tbody>
     <?php foreach ($reservations as $reservation) { ?>
         <tr>
-            <td><?= $reservation['id'] ?></td>
-            <td><?= $reservation['firstName'] ?></td>
-            <td><?= $reservation['number'] ?></td>
-            <td><?= $reservation['email'] ?></td>
-            <td><?= $reservation['diensten'] ?></td>
-            <td><?= $reservation['meetingtime'] ?></td>
-            <td><?= $reservation['message'] ?></td>
+            <td><?= htmlspecialchars ($reservation['id']) ?></td>
+            <td><?= htmlspecialchars ($reservation['firstName']) ?></td>
+            <td><?= htmlspecialchars ($reservation['number']) ?></td>
+            <td><?= htmlspecialchars ($reservation['email']) ?></td>
+            <td><?= htmlspecialchars ($reservation['diensten']) ?></td>
+            <td><?= htmlspecialchars ($reservation['meetingtime']) ?></td>
+            <td><?= htmlspecialchars ($reservation['message']) ?></td>
             <td><button onclick="window.location.href= 'Prijslijst.php';"> Details</button></td>
             <td><button onclick="window.location.href= 'Prijslijst.php';"> Edit</button></td>
             <td><button onclick="window.location.href= 'Prijslijst.php';"> Delete</button></td>

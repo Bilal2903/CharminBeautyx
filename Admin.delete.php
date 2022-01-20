@@ -68,7 +68,7 @@ include_once 'Admin.nav.php';
         <h2>Delete Admin</h2>
     </div>
     <p>
-        Weet u zeker dat u uw profiel "<?= $admin['adminName'] ?>" wilt verwijderen?
+        Weet u zeker dat u uw profiel "<?= htmlspecialchars ($admin['adminName']) ?>" wilt verwijderen?
     </p>
 
     <button type="submit" name="submit" value="Verwijderen">Verwijderen</button>

@@ -63,7 +63,7 @@ include_once 'nav.php';
 
 
 <div class="forum-heading">
-    <?php if ($login) { ?>
+    <?php if (htmlspecialchars ($login)) { ?>
         <h2>Je bent ingelogd!</h2>
     <?php } else { ?>
 </div>
@@ -78,10 +78,10 @@ include_once 'nav.php';
                     id="email"
                     type="email"
                     name="email"
-                    value="<?= $email ?? '' ?>"
+                    value="<?= htmlspecialchars ($email) ?? '' ?>"
             />
         </div>
-        <span class="errors"><?= $errors['email'] ?? '' ?></span>
+        <span class="errors"><?= htmlspecialchars ($errors['email']) ?? '' ?></span>
         <div class="input-parent">
             <label for="password">Password</label>
             <input
@@ -90,10 +90,10 @@ include_once 'nav.php';
                     name="password"
             />
         </div>
-        <span class="errors"><?= $errors['password'] ?? '' ?></span>
+        <span class="errors"><?= htmlspecialchars ($errors['password']) ?? '' ?></span>
 
         <div>
-            <p class="errors"><?= $errors['loginFailed'] ?? '' ?></p>
+            <p class="errors"><?= htmlspecialchars ($errors['loginFailed']) ?? '' ?></p>
         </div>
 
         <button class="Login-Button" type="submit" name="submit" value="Login">Login</button>

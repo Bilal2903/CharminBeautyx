@@ -51,8 +51,8 @@ include_once 'Admin.nav.php';
 ?>
 
 <div class="forum-heading">
-    <?php if ($result) { ?>
-        <h2>Welcome <?php echo $adminName ?> u bent Succesvol Geregistreerd!</h2>
+    <?php if (htmlspecialchars ($result)) { ?>
+        <h2>Welcome <?php echo htmlspecialchars($adminName) ?> u bent Succesvol Geregistreerd!</h2>
     <?php } else { ?>
 </div>
 
@@ -66,30 +66,30 @@ include_once 'Admin.nav.php';
                 id="adminName"
                 type="text"
                 name="adminName"
-                value="<?= $adminName ?? '' ?>"
+                value="<?= htmlspecialchars ($adminName) ?? '' ?>"
             />
         </div>
-        <span class="errors"><?= $errors['adminName'] ?? '' ?></span>
+        <span class="errors"><?= htmlspecialchars ($errors['adminName']) ?? '' ?></span>
         <div class="input-parent">
             <label for="adminEmail">Email</label>
             <input
                 id="adminEmail"
                 type="email"
                 name="adminEmail"
-                value="<?= $adminEmail ?? '' ?>"
+                value="<?= htmlspecialchars ($adminEmail) ?? '' ?>"
             />
         </div>
-        <span class="errors"><?= $errors['adminEmail'] ?? '' ?></span>
+        <span class="errors"><?= htmlspecialchars ($errors['adminEmail']) ?? '' ?></span>
         <div class="input-parent">
             <label for="adminPassword">Password</label>
             <input
                 id="adminPassword"
                 type="password"
                 name="adminPassword"
-                value="<?= $adminPassword ?? '' ?>"
+                value="<?= htmlspecialchars ($adminPassword) ?? '' ?>"
             />
         </div>
-        <span class="errors"><?= $errors['adminPassword'] ?? '' ?></span>
+        <span class="errors"><?= htmlspecialchars ($errors['adminPassword']) ?? '' ?></span>
 
         <button type="submit" name="submit" value="Toevoegen">Voeg toe</button>
 

@@ -23,7 +23,7 @@ require_once 'config/db.php';
 include_once 'nav.php';
 
 $adminEmail = mysqli_escape_string($conn, $_GET['adminEmail']);
-$adminName = $_GET['aadminName'];
+$adminName = mysqli_escape_string($conn, $_GET['aadminName']);
 
 
 $query = "SELECT * FROM admin WHERE adminEmail='$adminEmail'";
@@ -36,7 +36,7 @@ if (mysqli_num_rows($result) == $_SESSION) {
         'adminEmail' => $admin['adminEmail'],
         'adminPassword' => $admin['adminPassword']];
 
-    echo $_SESSION['loggedInAdmin']['adminName']['adminEmail'];
+    echo htmlspecialchars ($_SESSION['loggedInAdmin']['adminName']['adminEmail']);
 }
 
 ?>
@@ -44,8 +44,8 @@ if (mysqli_num_rows($result) == $_SESSION) {
 <section>
     <h1>Uw gegevens</h1>
     <ul>
-        <li>username: <?= $adminName['adminName'] ?></li>
-        <li>email: <?= $adminEmail ?></li>
+        <li>username: <?= htmlspecialchars ($adminName) ?></li>
+        <li>email: <?=  htmlspecialchars ($adminEmail) ?></li>
     </ul>
 </section>
 <div>

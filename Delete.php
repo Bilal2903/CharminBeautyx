@@ -69,7 +69,7 @@ include_once 'nav.php';
         <h2>Delete User</h2>
     </div>
     <p>
-        Weet u zeker dat u uw profiel "<?= $user['userName'] ?>" wilt verwijderen?
+        Weet u zeker dat u uw profiel "<?= htmlspecialchars ($user['userName']) ?>" wilt verwijderen?
     </p>
 
     <button type="submit" name="submit" value="Verwijderen">Verwijderen</button>
