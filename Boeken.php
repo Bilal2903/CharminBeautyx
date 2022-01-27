@@ -50,6 +50,8 @@ if (isset($_POST['submit'])) {
 <?php
 include_once 'nav.php';
 ?>
+<body>
+<img class="winter-nails" src="image/winter-nails.jpg" alt="Biab nails">
 
 <div class="forum-heading">
     <?php if (htmlspecialchars ($result)) { ?>
@@ -101,7 +103,7 @@ include_once 'nav.php';
 
                     <div class="input-parent">
                         <select id="diensten" name="diensten">
-                            <option value="-">Kies behandeling*</option>
+                            <option value="-">Kies behandeling*</>
                             <option value="BIAB TREATMENT">BIAB TREATMENT</option>
                             <option value="AFZONDERLIJKE MANICURE">AFZONDERLIJKE MANICURE</option>
                             <option value="THIN FRENCH">THIN FRENCH</option>
@@ -142,6 +144,7 @@ include_once 'nav.php';
 
 
 <?php } ?>
+</body>
 
 
 

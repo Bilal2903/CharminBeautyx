@@ -1,7 +1,9 @@
+                                                        /* nav bar */
 /* Logo CharmingBeauty */
 .logo {
     float: left;
     height: 100px;
+    position: relative;
 }
 
 /* Nav bar naast logo */
@@ -21,7 +23,7 @@
 }
 
 .navigation-bar ul {
-    padding: 18px;
+    padding: 15px;
     text-align: Left;
 }
 
@@ -42,6 +44,19 @@
     padding: 5px 15px;
     opacity: 0.7;
 }
+
+/* Hamburger menu*/
+
+
+
+
+
+
+
+
+
+
+
 
 /* vanaf hier (Red underline on hover) */
 
@@ -127,7 +142,7 @@ li a:hover, .dropdown:hover .dropbtn {
 .social-icon:hover {
     color: rgb(223, 152, 150);
 }
-
+                                                        /* Home Page */
 /* Foto nagelmodel Home page */
 .nagelmodel {
     height: 900px;
@@ -231,25 +246,25 @@ li a:hover, .dropdown:hover .dropbtn {
     position: relative;
 }
 
+                                                        /* Boeken Page */
+/* Boeken foto achtergrond*/
 
-
-
-
-
-
-
-
-
-
-
-/* Errors forums */
-.errors {
-    color: red;
+.winter-nails {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1240px;
+    height: 50%;
+    position: relative;
 }
 
 
 
-
+                                                        /* Alle forums */
+/* Errors forums */
+.errors {
+    color: red;
+}
 
 /* Log In forum, register forum, edit forum. */
 form {
@@ -351,10 +366,50 @@ button:hover {
 button:focus {
     box-shadow: 0 0 0 3px white;                          //Achtergrond-kleur-van-button//
 }
+                                                        /* Gallerij page*/
 
 
-/* Admin page User page*/
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
 
+/* Create four equal columns that sits next to each other */
+.foto-column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.foto-column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Responsive layout - maakt 2 inplaats van 4 colomen*/
+@media screen and (max-width: 800px) {
+    .foto-column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout worden gestapeld*/
+@media screen and (max-width: 600px) {
+    .foto-column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+                                                        /* Admin page User page*/
 table, th, td {
     border: 1px solid black;
 }
