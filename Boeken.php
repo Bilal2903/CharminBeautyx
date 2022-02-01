@@ -62,7 +62,7 @@ include_once 'nav.php';
     <div class="top-off-colum">
         <div class="colums-Service-Port">
             <div class="colum">
-                <div class="forum-heading"><h2>AFSPRAAK MAKEN</h2></div>
+                <h2 class="forum-heading">AFSPRAAK MAKEN</h2>
                 <H3 class="onze-service">ONZE SERVICE</H3>
             </div>
             <div class="colum-2">
