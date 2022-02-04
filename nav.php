@@ -18,51 +18,63 @@ session_start();
 
 <body>
 <header>
+
+    <div class="overlay"></div>
     <nav class="navigation-bar">
+        <!--button open zij menu-->
+        <button class="ham">
             <div class="icons">
                 <div class="fas fa-bars" id="menu-btn"></div>
             </div>
-
+        </button>
+        <!--foto logo charmigBeautyx-->
         <a href="home.php"><img class="logo" src="image/Charming%20Beauty.PNG" alt="CharmingBeautyx"></a>
-        <div id="navigation-container">
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="Boeken.php">Boeken</a></li>
-                <li><a href="Prijslijst.php">Prijslijst</a></li>
-                <li><a href="Gallerij.php">Gallerij</a></li>
-                <li><a href="Overmij.php">Over mij</a></li>
-                <li><a href="Contact.php">Contact</a></li>
-                <?php
-                if (isset($_SESSION["loggedInUser"])) { ?>
 
-                    <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">Settings</a>
-                        <div class="dropdown-content">
-                            <li><a href="profile.php">profiel</a></li>
-                            <li><a href="Profile.edit.php">Profiel bewerken</a></li>
-                            <li><a href="logout.php">Log Uit</a></li>
-                            <li><a href="Delete.php">Delete user</a></li>
-                        </div>
-                    </li>
-                    <?php
-                } else {
-                    echo "<li><a href='Register.php'>Sign Up</a></li>";
-                    echo "<li><a href='Login.php'>Log In</a></li>";
-                }
-                ?>
+        <div class="sideNav">
+            <!--menu button X-->
+            <button class="menuX">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
 
-                <a class="social-icon"
-                   href="https://www.snapchat.com/add/charmingbty?share_id=N0I0ODk5&locale=nl_NL" target="_blank">
-                    <ion-icon name="logo-snapchat"></ion-icon>
-                </a>
+            <div id="navigation-container">
+                <ul>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="Boeken.php">Boeken</a></li>
+                    <li><a href="Prijslijst.php">Prijslijst</a></li>
+                    <li><a href="Gallerij.php">Gallerij</a></li>
+                    <li><a href="Overmij.php">Over mij</a></li>
+                    <li><a href="Contact.php">Contact</a></li>
+                    <?php if (isset($_SESSION['loggedInUser'])) { ?>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn">Settings</a>
+                            <div class="dropdown-content">
+                                <a href="profile.php">profiel</a>
+                                <a href="Profile.edit.php">Profiel bewerken</a>
+                                <a href="logout.php">Log Uit</a>
+                                <a href="Delete.php">Delete user</a>
+                            </div>
+                        </li>
+                    <?php } else { ?>
+                        <li><a href='Register.php'>Sign Up</a></li>
+                        <li><a href='Login.php'>Log In</a></li>
+                    <?php } ?>
 
-                <a class="social-icon" href="https://www.instagram.com/charmingbeautyx/" target="_blank">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-            </ul>
+                    <a class="social-icon"
+                       href="https://www.snapchat.com/add/charmingbty?share_id=N0I0ODk5&locale=nl_NL"
+                       target="_blank">
+                        <ion-icon name="logo-snapchat"></ion-icon>
+                    </a>
 
-            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+                    <a class="social-icon" href="https://www.instagram.com/charmingbeautyx/" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </ul>
+
+                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            </div>
         </div>
     </nav>
 </header>
