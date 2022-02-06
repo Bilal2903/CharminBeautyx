@@ -23,10 +23,11 @@ session_start();
     <nav class="navigation-bar">
         <!--button open zij menu-->
         <button class="ham">
-            <div class="icons">
-                <div class="fas fa-bars" id="menu-btn"></div>
-            </div>
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </button>
+
         <!--foto logo charmigBeautyx-->
         <a href="home.php"><img class="logo" src="image/Charming%20Beauty.PNG" alt="CharmingBeautyx"></a>
 
@@ -81,3 +82,21 @@ session_start();
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

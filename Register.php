@@ -84,7 +84,7 @@ include_once 'nav.php';
         </div>
         <span class="errors"><?= htmlspecialchars ($errors['password']) ?? '' ?></span>
 
-        <button type="submit" name="submit" value="registreren">Registreren</button>
+        <button class="forum-btn" type="submit" name="submit" value="registreren">Registreren</button>
 
     </form>
 <?php } ?>

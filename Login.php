@@ -96,7 +96,7 @@ include_once 'nav.php';
             <p class="errors"><?= htmlspecialchars ($errors['loginFailed']) ?? '' ?></p>
         </div>
 
-        <button class="Login-Button" type="submit" name="submit" value="Login">Login</button>
+        <button class="forum-btn" type="submit" name="submit" value="Login">Login</button>
 
     </form>
 <?php } ?>

@@ -136,7 +136,7 @@ include_once 'nav.php';
                         />
                     </div>
 
-                    <button type="submit" name="submit" value="aanvragen">AANVRAGEN</button>
+                    <button class="forum-btn" type="submit" name="submit" value="aanvragen">AANVRAGEN</button>
                 </form>
             </div>
         </div>
